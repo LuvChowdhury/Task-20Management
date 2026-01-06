@@ -20,6 +20,7 @@ Thank you for your interest in reviewing and contributing to the Task Management
 ## 🤝 Code of Conduct
 
 ### Our Commitment
+
 We are committed to providing a welcoming and inspiring community for all. Please read and adhere to our Code of Conduct:
 
 - **Be Respectful**: Treat all community members with respect
@@ -28,6 +29,7 @@ We are committed to providing a welcoming and inspiring community for all. Pleas
 - **Be Professional**: Maintain professional communication at all times
 
 ### Unacceptable Behavior
+
 - Harassment or discrimination of any kind
 - Personal attacks or insults
 - Unwelcome sexual advances
@@ -39,6 +41,7 @@ We are committed to providing a welcoming and inspiring community for all. Pleas
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js 18.0 or higher
 - pnpm 10.14.0 or higher (or npm)
 - Git
@@ -47,22 +50,26 @@ We are committed to providing a welcoming and inspiring community for all. Pleas
 ### Fork & Clone
 
 1. **Fork the repository** on GitHub
+
    ```bash
    Click the "Fork" button on https://github.com/LuvChowdhury/Task-20Management
    ```
 
 2. **Clone your fork locally**
+
    ```bash
    git clone https://github.com/YOUR-USERNAME/Task-20Management.git
    cd Task-20Management
    ```
 
 3. **Add upstream remote** (to sync with main repo)
+
    ```bash
    git remote add upstream https://github.com/LuvChowdhury/Task-20Management.git
    ```
 
 4. **Install dependencies**
+
    ```bash
    pnpm install
    ```
@@ -117,6 +124,7 @@ git checkout -b fix/status-badge-colors
 ### TypeScript
 
 **Type Safety**
+
 ```typescript
 // ✅ Good: Explicit types
 interface TaskProps {
@@ -129,6 +137,7 @@ const handleChange = (data: any) => { ... }
 ```
 
 **Interface Naming**
+
 ```typescript
 // ✅ Good: Descriptive names
 interface TaskCardProps { ... }
@@ -142,6 +151,7 @@ interface Data { ... }
 ### React Components
 
 **Functional Components**
+
 ```typescript
 // ✅ Good: Functional component with proper typing
 export function TaskCard({ task, onStatusChange, onDelete }: TaskCardProps) {
@@ -153,46 +163,51 @@ const TaskCard = (props) => { ... }
 ```
 
 **Hook Usage**
+
 ```typescript
 // ✅ Good: Use hooks at top level
 export function Component() {
-  const [state, setState] = useState<Type>()
-  
+  const [state, setState] = useState<Type>();
+
   useEffect(() => {
     // Effect logic
-  }, [dependencies])
+  }, [dependencies]);
 }
 
 // ❌ Avoid: Conditional hook calls
 if (condition) {
-  const [state, setState] = useState()
+  const [state, setState] = useState();
 }
 ```
 
 ### Naming Conventions
 
 **Components** (PascalCase)
+
 ```typescript
-export function TaskCard() { }
-export function CreateTaskForm() { }
-export function StatusFilter() { }
+export function TaskCard() {}
+export function CreateTaskForm() {}
+export function StatusFilter() {}
 ```
 
 **Functions** (camelCase)
+
 ```typescript
-const handleStatusChange = () => { }
-const formatDate = (date: Date) => { }
-const filterTasks = (tasks: Task[]) => { }
+const handleStatusChange = () => {};
+const formatDate = (date: Date) => {};
+const filterTasks = (tasks: Task[]) => {};
 ```
 
 **Constants** (UPPER_SNAKE_CASE)
+
 ```typescript
-const MAX_TASK_TITLE_LENGTH = 200
-const DEFAULT_FILTER_STATUS = "all"
-const API_TIMEOUT_MS = 5000
+const MAX_TASK_TITLE_LENGTH = 200;
+const DEFAULT_FILTER_STATUS = "all";
+const API_TIMEOUT_MS = 5000;
 ```
 
 **CSS Classes** (kebab-case with semantic names)
+
 ```jsx
 <div className="task-card-header">
 <button className="status-badge status-completed">
@@ -201,6 +216,7 @@ const API_TIMEOUT_MS = 5000
 ### Tailwind CSS
 
 **Use Utility Classes**
+
 ```jsx
 // ✅ Good: Tailwind utilities
 <div className="bg-white rounded-lg border border-gray-200 p-5">
@@ -210,6 +226,7 @@ const API_TIMEOUT_MS = 5000
 ```
 
 **Responsive Design**
+
 ```jsx
 // ✅ Good: Mobile-first responsive
 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -219,6 +236,7 @@ const API_TIMEOUT_MS = 5000
 ```
 
 **Color Variables**
+
 ```jsx
 // ✅ Good: Use CSS variables
 <div className="bg-status-pending">
@@ -277,6 +295,7 @@ client/
 ### Examples
 
 **Feature Commit**
+
 ```
 feat(tasks): add task categories
 
@@ -288,6 +307,7 @@ and filter by category. This includes:
 ```
 
 **Bug Fix Commit**
+
 ```
 fix(status-badge): correct color for pending status
 
@@ -298,6 +318,7 @@ Fixes #123
 ```
 
 **Documentation Commit**
+
 ```
 docs: update API endpoints documentation
 
@@ -319,22 +340,26 @@ examples.
 ### Before Creating a PR
 
 1. **Update your branch**
+
    ```bash
    git fetch upstream
    git rebase upstream/main
    ```
 
 2. **Run tests**
+
    ```bash
    pnpm test
    ```
 
 3. **Build the project**
+
    ```bash
    pnpm build
    ```
 
 4. **Format code**
+
    ```bash
    pnpm format.fix
    ```
@@ -347,6 +372,7 @@ examples.
 ### Creating a PR
 
 1. **Push to your fork**
+
    ```bash
    git push origin feature/your-feature-name
    ```
@@ -360,9 +386,11 @@ examples.
 
 ```markdown
 ## Description
+
 Brief description of changes
 
 ## Type of Change
+
 - [ ] New feature
 - [ ] Bug fix
 - [ ] Documentation update
@@ -370,24 +398,30 @@ Brief description of changes
 - [ ] Performance improvement
 
 ## Related Issues
+
 Fixes #(issue number)
 
 ## Changes Made
+
 - Change 1
 - Change 2
 - Change 3
 
 ## Testing
+
 Describe how you tested the changes:
+
 - [ ] Tested on desktop
 - [ ] Tested on mobile
 - [ ] Unit tests added
 - [ ] Manual testing completed
 
 ## Screenshots (if applicable)
+
 Add before/after screenshots for UI changes
 
 ## Checklist
+
 - [ ] Code follows project style guidelines
 - [ ] Self-review completed
 - [ ] Comments added for complex logic
@@ -400,6 +434,7 @@ Add before/after screenshots for UI changes
 ### PR Review Expectations
 
 **Reviewers will check for:**
+
 - ✅ Code quality and adherence to standards
 - ✅ TypeScript type safety
 - ✅ Responsive design implementation
@@ -409,6 +444,7 @@ Add before/after screenshots for UI changes
 - ✅ Documentation completeness
 
 **Response time:**
+
 - Minor issues: 24 hours
 - Major issues: 48 hours
 - Approval: 2-5 business days
@@ -433,12 +469,14 @@ pnpm test --coverage
 ### Writing Tests
 
 **Test File Naming**
+
 ```
 Component.tsx → Component.spec.ts
 utils.ts → utils.spec.ts
 ```
 
 **Test Structure**
+
 ```typescript
 describe("TaskCard", () => {
   it("should render task title", () => {
@@ -451,7 +489,7 @@ describe("TaskCard", () => {
     const onStatusChange = vi.fn()
     const task = { id: "1", status: "pending", ... }
     render(<TaskCard task={task} onStatusChange={onStatusChange} ... />)
-    
+
     // Simulate status change
     expect(onStatusChange).toHaveBeenCalledWith("1", "in-progress")
   })
@@ -471,22 +509,24 @@ describe("TaskCard", () => {
 ### Code Comments
 
 **When to add comments:**
+
 ```typescript
 // ✅ Good: Complex logic explanation
 const filterTasks = (tasks: Task[], status: TaskStatus) => {
   // Filter tasks by exact status match and exclude deleted tasks
   // marked with soft-delete flag
-  return tasks.filter(t => t.status === status && !t.isDeleted)
-}
+  return tasks.filter((t) => t.status === status && !t.isDeleted);
+};
 
 // ❌ Avoid: Obvious comments
 const getName = () => {
   // Get the name
-  return user.name
-}
+  return user.name;
+};
 ```
 
 **Comment Format**
+
 ```typescript
 // Single line comments for brief explanations
 
@@ -519,7 +559,7 @@ When contributing features, update relevant docs:
  */
 export async function updateTaskStatus(
   taskId: string,
-  newStatus: TaskStatus
+  newStatus: TaskStatus,
 ): Promise<Task> {
   // Implementation
 }
@@ -589,29 +629,36 @@ Before submitting a PR for a new feature, ensure:
 
 ```markdown
 ## Description
+
 Brief description of the bug
 
 ## Reproduction Steps
+
 1. Step 1
 2. Step 2
 3. Step 3
 
 ## Expected Behavior
+
 What should happen
 
 ## Actual Behavior
+
 What actually happens
 
 ## Environment
+
 - OS: macOS/Windows/Linux
 - Browser: Chrome/Firefox/Safari
 - Node version: 18.x
 - pnpm version: 10.x
 
 ## Screenshots
+
 Attach screenshots if applicable
 
 ## Error Messages
+
 Include any console errors
 ```
 

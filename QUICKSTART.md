@@ -7,6 +7,7 @@ Get the Task Management Application up and running in 5 minutes.
 ## ⚡ 5-Minute Setup
 
 ### 1. Prerequisites Check
+
 ```bash
 # Verify Node.js version (need 18+)
 node --version
@@ -17,6 +18,7 @@ pnpm --version
 ```
 
 ### 2. Clone & Install
+
 ```bash
 # Clone the repository
 git clone https://github.com/LuvChowdhury/Task-20Management.git
@@ -27,6 +29,7 @@ pnpm install
 ```
 
 ### 3. Start Development Server
+
 ```bash
 # Start dev server with hot reload
 pnpm dev
@@ -37,6 +40,7 @@ pnpm dev
 ```
 
 ### 4. Open in Browser
+
 Visit `http://localhost:5173` in your browser. You should see the Task Manager application!
 
 ---
@@ -44,17 +48,20 @@ Visit `http://localhost:5173` in your browser. You should see the Task Manager a
 ## 🎯 What You Can Do
 
 ### Create a Task
+
 1. Click in "Add a new task..." input
 2. Type your task title
 3. (Optional) Add description in the expanded form
 4. Click "Create Task"
 
 ### Manage Tasks
+
 - **Change Status**: Use dropdown on task card
 - **Delete Task**: Click trash icon on hover
 - **Filter**: Click filter buttons at top
 
 ### Data Persistence
+
 Tasks automatically save to your browser's localStorage. Refresh the page - they'll still be there!
 
 ---
@@ -104,12 +111,14 @@ pnpm audit            # Security audit
 ## 🐛 Troubleshooting
 
 ### Port Already in Use
+
 ```bash
 # If port 5173 is already in use, Vite will use next available port
 # Check the terminal output for the actual URL
 ```
 
 ### Module Not Found Error
+
 ```bash
 # Clear cache and reinstall
 rm -rf node_modules
@@ -118,6 +127,7 @@ pnpm dev
 ```
 
 ### TypeScript Errors
+
 ```bash
 # Check for type errors
 pnpm typecheck
@@ -127,6 +137,7 @@ pnpm typecheck
 ```
 
 ### Styles Not Updating
+
 ```bash
 # Clear browser cache
 # Ctrl+Shift+R (hard refresh)
@@ -138,22 +149,26 @@ pnpm typecheck
 ## 📚 Next Steps
 
 ### Learn the Code
+
 1. **Start here**: `client/pages/Index.tsx` - Main page component
 2. **Components**: `client/components/` - Individual components
 3. **Styling**: `client/global.css` - Global CSS variables
 4. **Config**: `tailwind.config.ts` - Design system
 
 ### Make Changes
+
 1. Edit a file in `client/` directory
 2. Dev server auto-reloads (HMR)
 3. See changes instantly in browser
 
 ### Understand Architecture
+
 - Read `ARCHITECTURE.md` for technical details
 - Check `README.md` for feature overview
 - See `CONTRIBUTING.md` for code standards
 
 ### Deploy
+
 - See `DEPLOYMENT.md` for platform-specific guides
 - Netlify recommended (zero-config)
 - Vercel, AWS Amplify also supported
@@ -163,24 +178,26 @@ pnpm typecheck
 ## 💡 Tips
 
 ### Development Productivity
+
 - **VS Code Extensions**:
   - ES7+ React/Redux/React-Native snippets
   - Tailwind CSS IntelliSense
   - TypeScript Vue Plugin
   - Prettier - Code formatter
-  
 - **Browser DevTools**:
   - Open DevTools: F12 or Right-click → Inspect
   - React DevTools extension (helpful)
   - Network tab to check requests
 
 ### Component Editing
+
 ```typescript
 // Try editing this file: client/components/TaskCard.tsx
 // Change the status badge text and see it update instantly!
 ```
 
 ### Experimenting
+
 - Try adding a new filter status
 - Create a new component
 - Modify the color scheme
@@ -191,12 +208,14 @@ pnpm typecheck
 ## 🔍 Quick Feature Review
 
 **Status Filtering** ✅
+
 ```
 Buttons: All Tasks | Pending | In Progress | Completed
 Try clicking each to see filtered results
 ```
 
 **Create Task Form** ✅
+
 ```
 1. Click input → form expands
 2. Enter title + description
@@ -205,6 +224,7 @@ Try clicking each to see filtered results
 ```
 
 **Task Card** ✅
+
 ```
 Shows:
 - Task title
@@ -215,6 +235,7 @@ Shows:
 ```
 
 **Data Persistence** ✅
+
 ```
 1. Create a task
 2. Close browser tab
@@ -227,6 +248,7 @@ Shows:
 ## 📊 Performance Checks
 
 ### Bundle Size
+
 ```bash
 pnpm build
 
@@ -237,7 +259,9 @@ pnpm build
 ```
 
 ### Check Dev Server Performance
+
 Open browser DevTools:
+
 1. Network tab - Check load times
 2. Performance tab - Monitor runtime performance
 3. Coverage tab - Unused CSS/JS analysis
@@ -258,6 +282,7 @@ Once comfortable with frontend, explore backend:
 ## 📞 Need Help?
 
 ### Documentation
+
 - **Full Guide**: `README.md`
 - **Architecture**: `ARCHITECTURE.md`
 - **Deployment**: `DEPLOYMENT.md`
@@ -301,18 +326,21 @@ After setup, verify everything works:
 ## 🎓 Learning Path
 
 ### Beginner (First day)
+
 1. Run the app
 2. Explore the UI
 3. Read `README.md`
 4. Try making small style changes
 
 ### Intermediate (First week)
+
 1. Understand component structure
 2. Read `ARCHITECTURE.md`
 3. Make feature changes
 4. Learn TypeScript patterns
 
 ### Advanced (First month)
+
 1. Add backend API integration
 2. Implement new features
 3. Deploy to production
@@ -322,13 +350,14 @@ After setup, verify everything works:
 
 ## 🎉 You're All Set!
 
-Everything is installed and running. Start exploring and building! 
+Everything is installed and running. Start exploring and building!
 
 **Happy coding!** 🚀
 
 ---
 
 **Quick Links**:
+
 - 📖 [Full README](./README.md)
 - 🏗️ [Architecture Guide](./ARCHITECTURE.md)
 - 🚀 [Deployment Guide](./DEPLOYMENT.md)

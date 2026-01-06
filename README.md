@@ -84,6 +84,7 @@ This is a UI design project for a task management application that demonstrates 
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - **React 18.3** - UI library
 - **TypeScript** - Type safety and better DX
 - **Vite 7** - Lightning-fast build tool
@@ -94,12 +95,14 @@ This is a UI design project for a task management application that demonstrates 
 - **Radix UI** - Unstyled, accessible component primitives
 
 ### Development Tools
+
 - **pnpm** - Fast package manager
 - **Prettier** - Code formatting
 - **Vitest** - Unit testing framework
 - **TypeScript** - Static type checking
 
 ### Backend (Ready for API Integration)
+
 - **Express 5** - Web framework
 - **Zod** - Data validation
 - **Node.js** - Runtime environment
@@ -141,18 +144,21 @@ code/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js 18+ or higher
 - pnpm (recommended) or npm
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/LuvChowdhury/Task-20Management.git
    cd Task-20Management
    ```
 
 2. **Install dependencies**
+
    ```bash
    pnpm install
    # or
@@ -160,6 +166,7 @@ code/
    ```
 
 3. **Start the development server**
+
    ```bash
    pnpm dev
    # or
@@ -179,6 +186,7 @@ npm run build
 ```
 
 This creates optimized production builds:
+
 - `dist/spa/` - Minified client bundle
 - `dist/server/` - Server bundle for SSR
 
@@ -195,17 +203,20 @@ npm start
 ## 💡 Usage
 
 ### Creating a Task
+
 1. Click in the "Add a new task..." input field
 2. Enter task title
 3. (Optional) Add a description in the expanded form
 4. Click "Create Task" or press Enter
 
 ### Managing Tasks
+
 - **Change Status**: Use the dropdown menu on each task to update its status
 - **Delete Task**: Click the trash icon to remove a task
 - **Filter Tasks**: Use the status filter buttons to view tasks by status
 
 ### Local Storage
+
 - Tasks are automatically saved to your browser's localStorage
 - Data persists across browser sessions
 - No backend server required
@@ -217,11 +228,13 @@ npm start
 ### Color Palette
 
 **Task Status Colors**
+
 - **Pending**: Amber (#FBBF24) - Indicates action needed
 - **In Progress**: Blue (#3B82F6) - Currently being worked on
 - **Completed**: Green (#22C55E) - Successfully finished
 
 **UI Colors**
+
 - **Background**: White (#FFFFFF) with gray gradients
 - **Text**: Dark gray (#111827) for primary, light gray for secondary
 - **Borders**: Light gray (#E5E7EB)
@@ -245,6 +258,7 @@ npm start
 ### Components
 
 All UI components from shadcn/ui are available and can be extended:
+
 - Button (variants: default, outline, ghost)
 - Input fields with validation states
 - Textarea for longer content
@@ -264,6 +278,7 @@ The application is optimized for all screen sizes using Tailwind's responsive ut
 - **Desktop**: > 1024px
 
 Key responsive features:
+
 - Grid layout adjusts from 2 columns (mobile) to 4 columns (desktop)
 - Navigation and forms adapt to screen size
 - Touch-friendly button sizes on mobile
@@ -274,11 +289,13 @@ Key responsive features:
 ## 🔄 State Management
 
 ### Local State
+
 - React `useState` for component-level state
 - Task list stored in localStorage for persistence
 - Filter status maintained in component state
 
 ### Future Enhancements
+
 - Integration with TanStack Query for server state management
 - Redux/Zustand for complex global state
 - Context API for theme switching
@@ -300,6 +317,7 @@ DELETE /api/tasks/:id          # Delete task
 ```
 
 ### Backend Structure
+
 - Express server setup ready in `server/` directory
 - Type-safe API calls with TypeScript
 - Zod for request/response validation
@@ -310,6 +328,7 @@ DELETE /api/tasks/:id          # Delete task
 ## 🧪 Testing
 
 ### Run Tests
+
 ```bash
 pnpm test
 # or
@@ -317,6 +336,7 @@ npm test
 ```
 
 ### Test Coverage
+
 - Unit tests for utility functions
 - Component tests for UI components
 - Integration tests for features
@@ -342,6 +362,7 @@ npm test
 - **Caching**: Browser caching and service worker ready
 
 **Build Stats:**
+
 - Client bundle: ~576 KB (minified), ~178 KB (gzipped)
 - Server bundle: ~1.56 KB
 - CSS: ~62.5 KB (minified), ~11.2 KB (gzipped)
@@ -379,6 +400,7 @@ vercel
 ### Deploy to Other Platforms
 
 The app can be deployed anywhere that supports Node.js:
+
 - AWS Amplify
 - Heroku
 - DigitalOcean
@@ -408,6 +430,7 @@ This project is available for review and learning purposes. Check the LICENSE fi
 ## 📧 Support & Feedback
 
 For questions, issues, or feedback:
+
 - Open an issue on GitHub
 - Review the code in the repository
 - Check existing documentation
@@ -417,6 +440,7 @@ For questions, issues, or feedback:
 ## 🎓 Learning Resources
 
 ### Built With
+
 - [React Documentation](https://react.dev)
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 - [Tailwind CSS Guide](https://tailwindcss.com/docs)
@@ -424,6 +448,7 @@ For questions, issues, or feedback:
 - [shadcn/ui Components](https://ui.shadcn.com)
 
 ### Modern Web Development
+
 - Component-based architecture
 - Type-safe development
 - Responsive design patterns
@@ -435,12 +460,14 @@ For questions, issues, or feedback:
 ## 🗺️ Roadmap
 
 ### Phase 1 (Current)
+
 ✅ Basic task management UI
 ✅ Status filtering and updates
 ✅ Responsive design
 ✅ Local storage persistence
 
 ### Phase 2 (Planned)
+
 - [ ] Backend API integration
 - [ ] Database (PostgreSQL/MongoDB)
 - [ ] User authentication
@@ -452,6 +479,7 @@ For questions, issues, or feedback:
 - [ ] Team collaboration
 
 ### Phase 3 (Future)
+
 - [ ] Mobile app (React Native)
 - [ ] Advanced analytics
 - [ ] Export to PDF/CSV
@@ -474,24 +502,25 @@ For questions, issues, or feedback:
 
 ## 🎯 Key Features Summary
 
-| Feature | Status | Details |
-|---------|--------|---------|
-| Task Display | ✅ Complete | Card-based layout with metadata |
-| Status Filtering | ✅ Complete | 4-way filter system |
-| Task Creation | ✅ Complete | Expandable form interface |
-| Status Updates | ✅ Complete | Dropdown selection |
-| Task Deletion | ✅ Complete | Hover-revealed trash icon |
-| Status Badges | ✅ Complete | Color-coded indicators |
-| Responsive Design | ✅ Complete | Mobile-first, all breakpoints |
-| Data Persistence | ✅ Complete | localStorage integration |
-| Dark Mode | ✅ Configured | Ready to enable |
-| API Ready | ✅ Prepared | Backend structure in place |
+| Feature           | Status        | Details                         |
+| ----------------- | ------------- | ------------------------------- |
+| Task Display      | ✅ Complete   | Card-based layout with metadata |
+| Status Filtering  | ✅ Complete   | 4-way filter system             |
+| Task Creation     | ✅ Complete   | Expandable form interface       |
+| Status Updates    | ✅ Complete   | Dropdown selection              |
+| Task Deletion     | ✅ Complete   | Hover-revealed trash icon       |
+| Status Badges     | ✅ Complete   | Color-coded indicators          |
+| Responsive Design | ✅ Complete   | Mobile-first, all breakpoints   |
+| Data Persistence  | ✅ Complete   | localStorage integration        |
+| Dark Mode         | ✅ Configured | Ready to enable                 |
+| API Ready         | ✅ Prepared   | Backend structure in place      |
 
 ---
 
 ## 👨‍💻 Development Notes
 
 ### Code Conventions
+
 - **Component Naming**: PascalCase for components, camelCase for functions
 - **File Organization**: Components grouped by feature
 - **Type Safety**: Full TypeScript with strict mode

@@ -25,31 +25,37 @@ This guide covers how to deploy the Task Management Application to various platf
 Before deploying, ensure:
 
 - [ ] All tests pass locally
+
   ```bash
   pnpm test
   ```
 
 - [ ] Build succeeds without errors
+
   ```bash
   pnpm build
   ```
 
 - [ ] No TypeScript errors
+
   ```bash
   pnpm typecheck
   ```
 
 - [ ] Code is formatted
+
   ```bash
   pnpm format.fix
   ```
 
 - [ ] All changes are committed
+
   ```bash
   git status  # Should be clean
   ```
 
 - [ ] Branch is up to date
+
   ```bash
   git pull origin main
   ```
@@ -100,6 +106,7 @@ dist/
 ### Build Optimization
 
 The build includes:
+
 - ✅ TypeScript compilation and type checking
 - ✅ CSS minification and purging
 - ✅ JavaScript minification and tree-shaking
@@ -116,16 +123,19 @@ The build includes:
 #### Using Netlify CLI
 
 **1. Install Netlify CLI**
+
 ```bash
 pnpm install -g netlify-cli
 ```
 
 **2. Authenticate**
+
 ```bash
 netlify login
 ```
 
 **3. Deploy**
+
 ```bash
 # First deployment (creates site)
 netlify deploy --prod
@@ -155,6 +165,7 @@ The repository includes `netlify.toml`:
 #### Connected Git Deployment
 
 1. **Push to GitHub**
+
    ```bash
    git push origin main
    ```
@@ -208,11 +219,13 @@ The repository includes `netlify.toml`:
 #### Using Vercel CLI
 
 **1. Install Vercel CLI**
+
 ```bash
 pnpm install -g vercel
 ```
 
 **2. Deploy**
+
 ```bash
 # Interactive deployment
 vercel
@@ -239,6 +252,7 @@ vercel --prod
 #### Vercel Configuration
 
 Create `vercel.json`:
+
 ```json
 {
   "buildCommand": "pnpm run build",
@@ -269,6 +283,7 @@ Create `vercel.json`:
 ### AWS Amplify
 
 **1. Connect GitHub Repository**
+
 - Visit aws.amazon.com/amplify
 - Click "Create app"
 - Choose "Host web app"
@@ -276,6 +291,7 @@ Create `vercel.json`:
 - Choose your repository and branch
 
 **2. Build Settings**
+
 ```yaml
 version: 1
 frontend:
@@ -290,17 +306,19 @@ frontend:
   artifacts:
     baseDirectory: dist/spa
     files:
-      - '**/*'
+      - "**/*"
   cache:
     paths:
-      - 'node_modules/**/*'
+      - "node_modules/**/*"
 ```
 
 **3. Environment Variables**
+
 - Go to App settings → Environment variables
 - Add `VITE_API_URL` for your API endpoint
 
 **4. Custom Domain**
+
 - Domain Management → Add domain
 - Update DNS records (detailed instructions provided)
 
@@ -311,28 +329,33 @@ frontend:
 **Note**: Heroku's free tier has been discontinued. Use Heroku paid plans or alternative platforms.
 
 **1. Create Heroku App**
+
 ```bash
 heroku login
 heroku create your-app-name
 ```
 
 **2. Add buildpack**
+
 ```bash
 heroku buildpacks:add heroku/nodejs
 ```
 
 **3. Set environment variables**
+
 ```bash
 heroku config:set NODE_ENV=production
 heroku config:set VITE_API_URL=https://your-api.com
 ```
 
 **4. Deploy**
+
 ```bash
 git push heroku main
 ```
 
 **5. View logs**
+
 ```bash
 heroku logs --tail
 ```
@@ -342,24 +365,28 @@ heroku logs --tail
 ### DigitalOcean
 
 **1. Create App via DigitalOcean App Platform**
+
 - Visit cloud.digitalocean.com/apps
 - Click "Create App"
 - Choose "GitHub" as source
 - Select your repository
 
 **2. Configure Build**
+
 - Name: `task-manager`
 - Build command: `pnpm run build`
 - Output directory: `dist/spa`
 - HTTP port: `8080`
 
 **3. Environment Variables**
+
 ```
 VITE_API_URL=https://api.your-domain.com
 NODE_VERSION=18
 ```
 
 **4. Deploy**
+
 - Click "Deploy"
 - Automatic deployments on push to main
 
@@ -389,11 +416,13 @@ VITE_GA_ID=G-XXXXXXXXXX
 ### Environment Variable Types
 
 **Vite Variables** (exposed to frontend):
+
 - Must start with `VITE_`
 - Available in browser code
 - Example: `VITE_API_URL`
 
 **Backend Variables** (Node.js only):
+
 - No prefix restriction
 - Hidden from browser
 - Example: `DATABASE_URL`, `SECRET_KEY`
@@ -413,10 +442,11 @@ VITE_GA_ID=G-XXXXXXXXXX
 ### Verification Steps
 
 1. **Test Live Site**
+
    ```bash
    # Visit your deployed URL
    https://your-app.com
-   
+
    # Test functionality
    - Create a task
    - Update status
@@ -431,13 +461,14 @@ VITE_GA_ID=G-XXXXXXXXXX
    - Monitor load times
 
 3. **Monitor Logs**
+
    ```bash
    # Netlify
    netlify logs --tail
-   
+
    # Vercel
    vercel logs
-   
+
    # Heroku
    heroku logs --tail
    ```
@@ -450,28 +481,30 @@ VITE_GA_ID=G-XXXXXXXXXX
 ### Monitoring Setup
 
 **Sentry (Error Tracking)**
+
 ```typescript
 // In your entry point
-import * as Sentry from "@sentry/react"
+import * as Sentry from "@sentry/react";
 
 Sentry.init({
   dsn: import.meta.env.VITE_SENTRY_DSN,
   environment: import.meta.env.MODE,
-  tracesSampleRate: 0.1
-})
+  tracesSampleRate: 0.1,
+});
 ```
 
 **Google Analytics**
+
 ```typescript
 // Track pageviews
-import { useEffect } from "react"
+import { useEffect } from "react";
 
 export function useAnalytics() {
   useEffect(() => {
     if (window.gtag) {
-      window.gtag("pageview")
+      window.gtag("pageview");
     }
-  }, [])
+  }, []);
 }
 ```
 
@@ -499,17 +532,17 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'pnpm'
-      
+          cache: "pnpm"
+
       - name: Install
         run: pnpm install
-      
+
       - name: Test
         run: pnpm test
-      
+
       - name: Build
         run: pnpm build
-      
+
       - name: Deploy
         run: netlify deploy --prod
         env:
@@ -526,6 +559,7 @@ jobs:
 #### Build Fails with "Cannot find module"
 
 **Solution**:
+
 ```bash
 # Clear cache and reinstall
 rm -rf node_modules
@@ -536,6 +570,7 @@ pnpm build
 #### 404 Errors on Page Refresh
 
 **Solution**: Configure SPA routing redirect
+
 - Netlify: Already configured in `netlify.toml`
 - Vercel: Add `vercel.json` redirect
 - Other: Configure web server to serve `index.html`
@@ -543,6 +578,7 @@ pnpm build
 #### Environment Variables Not Found
 
 **Solution**:
+
 ```bash
 # Verify variable naming
 # Must start with VITE_ for browser access
@@ -557,6 +593,7 @@ pnpm build
 #### Slow Performance
 
 **Solution**:
+
 - Check bundle size: `npm run build`
 - Enable gzip compression
 - Use CDN for static assets
@@ -566,18 +603,20 @@ pnpm build
 #### CORS Errors
 
 **Solution**:
+
 - Configure backend CORS headers
 - Use proxy in development
 - Check API URL configuration
 
 ```typescript
 // Verify API URL
-console.log(import.meta.env.VITE_API_URL)
+console.log(import.meta.env.VITE_API_URL);
 ```
 
 #### Out of Memory During Build
 
 **Solution**:
+
 ```bash
 # Increase Node memory
 export NODE_OPTIONS=--max_old_space_size=4096
