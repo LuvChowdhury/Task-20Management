@@ -24,7 +24,8 @@ export default function Index() {
       {
         id: "2",
         title: "Review project requirements",
-        description: "Review and finalize project specifications with stakeholders",
+        description:
+          "Review and finalize project specifications with stakeholders",
         status: "completed" as TaskStatus,
         createdAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
       },
@@ -64,7 +65,7 @@ export default function Index() {
 
   const handleStatusChange = (id: string, status: TaskStatus) => {
     setTasks(
-      tasks.map((task) => (task.id === id ? { ...task, status } : task))
+      tasks.map((task) => (task.id === id ? { ...task, status } : task)),
     );
   };
 
@@ -137,7 +138,10 @@ export default function Index() {
 
         {/* Filter and Task List */}
         <div className="space-y-6">
-          <StatusFilter activeFilter={filterStatus} onChange={setFilterStatus} />
+          <StatusFilter
+            activeFilter={filterStatus}
+            onChange={setFilterStatus}
+          />
 
           {/* Task List */}
           <div className="space-y-4">

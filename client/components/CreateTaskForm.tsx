@@ -23,7 +23,10 @@ export function CreateTaskForm({ onSubmit }: CreateTaskFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white rounded-lg border border-gray-200 p-5">
+    <form
+      onSubmit={handleSubmit}
+      className="bg-white rounded-lg border border-gray-200 p-5"
+    >
       <div className="space-y-4">
         <div>
           <Input

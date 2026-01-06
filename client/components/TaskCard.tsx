@@ -74,7 +74,12 @@ export function TaskCard({ task, onStatusChange, onDelete }: TaskCardProps) {
         </div>
 
         <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-          <Select value={task.status} onValueChange={(value) => onStatusChange(task.id, value as TaskStatus)}>
+          <Select
+            value={task.status}
+            onValueChange={(value) =>
+              onStatusChange(task.id, value as TaskStatus)
+            }
+          >
             <SelectTrigger className="h-9 w-32 border-gray-300">
               <SelectValue />
             </SelectTrigger>
